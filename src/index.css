@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-paper: #faf9f4;
+    --bg-surface: #ffffff;
+    --solar-primary: #fcec4d;
+    --solar-glow: #fbfb89;
+    --accent-olive: #827602;
+    --support-taupe: #6f674d;
+    --muted-stone: #bcb4ae;
+    --ink-primary: #141310;
+    --border-hairline: rgba(20, 19, 16, 0.1);
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-paper);
+    color: var(--ink-primary);
+    overflow-x: hidden;
+  }
+}
+
+.font-serif-editorial {
+  font-family: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  letter-spacing: -0.025em;
+}
+
+.font-mono-tech {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Architectural Grid Background inspired by Daniel Sun design system */
+.bg-arch-grid {
+  background-size: 64px 64px;
+  background-image:
+    linear-gradient(to right, rgba(133, 124, 93, 0.09) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(133, 124, 93, 0.09) 1px, transparent 1px);
+}
+
+.bg-arch-grid-subtle {
+  background-size: 48px 48px;
+  background-image:
+    linear-gradient(to right, rgba(133, 124, 93, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(133, 124, 93, 0.06) 1px, transparent 1px);
+}
+
+/* Signature soft yellow gradient glows (#fcec4d & #fbfb89) */
+.hero-solar-aura {
+  background:
+    radial-gradient(ellipse 68% 54% at 50% -4%, rgba(252, 236, 77, 0.52) 0%, rgba(251, 251, 137, 0.28) 42%, rgba(250, 249, 244, 0) 76%),
+    radial-gradient(circle at 82% 24%, rgba(252, 236, 77, 0.22) 0%, rgba(250, 249, 244, 0) 52%);
+}
+
+.card-solar-glow {
+  background:
+    radial-gradient(ellipse 90% 80% at 100% 0%, rgba(252, 236, 77, 0.34) 0%, rgba(251, 251, 137, 0.16) 48%, rgba(255, 255, 255, 0.95) 100%);
+}
+
+.footer-solar-aura {
+  background:
+    radial-gradient(ellipse 75% 65% at 50% 105%, rgba(252, 236, 77, 0.5) 0%, rgba(251, 251, 137, 0.25) 45%, rgba(250, 249, 244, 0) 80%);
+}
+
+/* Marquee Hero ticker animation */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 34s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+}
